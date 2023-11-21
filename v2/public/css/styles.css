@@ -1,0 +1,19 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  @apply font-sans bg-gray-100 h-screen;
+}
+
+.container {
+  @apply mx-auto p-4 max-w-md;
+}
+
+.input {
+  @apply w-full p-2 border rounded;
+}
+
+.button {
+  @apply bg-blue-500 text-white p-2 rounded;
+}
