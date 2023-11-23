@@ -1,4 +1,4 @@
 import './style.css'
-import startTrelleApp from './trelle.js'
+import TrelloLikeApp from './trelle.js'
 
-startTrelleApp(document.querySelector('#app'))
+TrelloLikeApp(document.querySelector('#app'))

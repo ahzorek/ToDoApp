@@ -40,7 +40,7 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
+#root {
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
@@ -76,10 +76,6 @@ h1 {
   align-items: center;
   padding-inline: 1rem;
   text-align: left;
-}
-
-.column-header-actions h2 {
-  font-size: 1rem;
 }
 
 .inputTodo {

@@ -1,27 +1,27 @@
-const todoInput = document.getElementById('todoInput');
-const addTodoButton = document.querySelector('button');
-const todoList = document.getElementById('todoList');
+var todoInput = document.getElementById('todoInput')
+var addTodoButton = document.querySelector('button')
+var todoList = document.getElementById('todoList')
 
 function addTodo() {
-  const todoText = todoInput.value.trim();
+  var todoText = todoInput.value.trim()
 
   if (todoText !== '') {
-    const listItem = document.createElement('li');
-    listItem.className = 'flex justify-between';
-    listItem.innerText = todoText;
+    var listItem = document.createElement('li')
+    listItem.className = 'flex justify-between'
+    listItem.innerText = todoText
 
-    const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Apagar';
+    var deleteButton = document.createElement('button')
+    deleteButton.innerText = 'Apagar'
 
     deleteButton.onclick = function () {
-      listItem.remove();
-    };
+      listItem.remove()
+    }
 
-    listItem.appendChild(deleteButton);
+    listItem.appendChild(deleteButton)
 
-    todoList.appendChild(listItem);
+    todoList.appendChild(listItem)
 
-    todoInput.value = '';
+    todoInput.value = ''
   }
 
 }

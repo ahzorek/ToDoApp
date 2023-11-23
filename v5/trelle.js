@@ -1,38 +1,46 @@
-export default function startTrelleApp(container) {
+export default function TrelloLikeApp(container) {
   let appState = [
     {
-      "taskName": "Desenvolver Landing Pages",
+      "taskName": "Ideação e Planejamento 🚀",
       "todos": [
-        { "text": "Iniciar o design", "completed": false, "stage": "Início do Projeto" },
-        { "text": "Criar protótipos", "completed": false, "stage": "Desenvolvimento de Conceito" },
-        { "text": "Codificar as páginas", "completed": false, "stage": "Implementação" },
-        { "text": "Conduzir testes de usabilidade", "completed": false, "stage": "Testes e Ajustes" },
-        { "text": "Publicar as páginas", "completed": false, "stage": "Entrega e Avaliação Final" }
+        { "text": "Desenvolver landing pages", "completed": false },
+        { "text": "Conduzir pesquisa de mercado", "completed": false },
+        { "text": "Definir metas e objetivos", "completed": false }
       ]
     },
     {
-      "taskName": "Elaborar Relatório de Vendas",
+      "taskName": "Design e Prototipagem 🎨",
       "todos": [
-        { "text": "Coletar dados de vendas", "completed": false, "stage": "Início do Projeto" },
-        { "text": "Analisar tendências", "completed": false, "stage": "Desenvolvimento de Conceito" },
-        { "text": "Preparar o relatório", "completed": false, "stage": "Implementação" },
-        { "text": "Revisar e corrigir", "completed": false, "stage": "Testes e Ajustes" },
-        { "text": "Apresentar aos stakeholders", "completed": false, "stage": "Entrega e Avaliação Final" }
+        { "text": "Criar design das landing pages", "completed": false },
+        { "text": "Obter feedback de design", "completed": false },
+        { "text": "Refinar protótipos", "completed": false }
       ]
     },
     {
-      "taskName": "Implementar Novo Sistema de Pagamentos",
+      "taskName": "Implementação 🚧",
       "todos": [
-        { "text": "Avaliar soluções existentes", "completed": false, "stage": "Início do Projeto" },
-        { "text": "Selecionar tecnologias", "completed": false, "stage": "Desenvolvimento de Conceito" },
-        { "text": "Desenvolver e integrar", "completed": false, "stage": "Implementação" },
-        { "text": "Testar segurança e desempenho", "completed": false, "stage": "Testes e Ajustes" },
-        { "text": "Implantar e monitorar", "completed": false, "stage": "Entrega e Avaliação Final" }
+        { "text": "Codificar as landing pages", "completed": false },
+        { "text": "Realizar testes de funcionalidade", "completed": false },
+        { "text": "Integrar conteúdo e recursos", "completed": false }
+      ]
+    },
+    {
+      "taskName": "Testes e Ajustes 🧪",
+      "todos": [
+        { "text": "Conduzir testes de usabilidade", "completed": false },
+        { "text": "Corrigir bugs identificados", "completed": false },
+        { "text": "Otimizar desempenho", "completed": false }
+      ]
+    },
+    {
+      "taskName": "Lançamento e Avaliação 🚀",
+      "todos": [
+        { "text": "Publicar as landing pages", "completed": false },
+        { "text": "Avaliar o desempenho inicial", "completed": false },
+        { "text": "Coletar feedback dos usuários", "completed": false }
       ]
     }
   ]
-
-
 
   const render = () => {
     container.innerHTML = `
@@ -67,11 +75,11 @@ export default function startTrelleApp(container) {
         `).join('')}
           <div class="column empty" data-column-index="${appState.length}">
             <div class="column-header-actions">
-              <button class="addTask" data-column-index="${appState.length}">Adicionar coluna</button>
+              <button class="addTask" data-column-index="${appState.length}">Nova coluna +</button>
             </div>
           </div>
       </div>
-    `;
+    `
 
     document.querySelectorAll('.addTodo').forEach(btn => btn.addEventListener('click', addTodo))
     document.querySelectorAll('.removeTodo').forEach(btn => btn.addEventListener('click', removeTodo))
@@ -92,7 +100,7 @@ export default function startTrelleApp(container) {
       renameTask(columnIndex)
     }))
 
-    // console.log(appState)
+    console.log(appState)
   }
 
 
@@ -129,10 +137,10 @@ export default function startTrelleApp(container) {
   }
 
   const enableEditMode = (columnIndex, todoIndex) => {
-    const span = document.querySelector(`[data-column-index="${columnIndex}"] [data-todo-index="${todoIndex}"] .editable`);
+    const span = document.querySelector(`[data-column-index="${columnIndex}"] [data-todo-index="${todoIndex}"] .editable`)
     span.contentEditable = true;
-    span.focus();
-  };
+    span.focus()
+  }
 
   const saveTodo = (event) => {
     const columnIndex = event.target.closest('.column').dataset.columnIndex
@@ -166,9 +174,9 @@ export default function startTrelleApp(container) {
 
     if (todos.length === 0 || confirm("A coluna não está vazia. Tem certeza que deseja removê-la?")) {
       appState.splice(columnIndex, 1);
-      render();
+      render()
     }
-  };
+  }
 
 
   const renameTask = (columnIndex) => {
@@ -179,8 +187,7 @@ export default function startTrelleApp(container) {
     render()
   }
 
-  const addTask = (event) => {
-    const columnIndex = event.target.dataset.columnIndex
+  const addTask = () => {
     const newTaskName = prompt('Nome:')
     if (newTaskName !== null) {
       appState.push({ taskName: newTaskName, todos: [] })
