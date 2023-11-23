@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="app.js"></script>
   <title>Todo App</title>
-
+  <script defer src="app.js"></script>
 </head>
 
 <body class="font-sans bg-gray-100 h-screen">
@@ -15,12 +14,14 @@
   <div id="app">
     <div class="mx-auto p-4 max-w-md">
       <h1 class="text-2xl font-bold mb-4">Lista To Do</h1>
-      <input id="todoInput" class="w-full p-2 border rounded mb-2" type="text" placeholder="Adicionar todo...">
-      <button onclick="addTodo()" class="bg-gray-700 text-white p-2 rounded">Add Todo</button>
+      <input id="todoInput" class="w-full p-2 border rounded mb-2" type="text" placeholder="Novo todo...">
+      <button onclick="addTodo()" class="bg-gray-700 text-white p-2 rounded">Adicionar</button>
       <ul id="todoList" class="mt-4">
+        <!-- todos -->
       </ul>
     </div>
   </div>
+
 
 </body>
 

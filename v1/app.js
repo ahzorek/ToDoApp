@@ -1,17 +1,10 @@
-const app = document.getElementById('app')
+const todoList = document.getElementById('todoList')
 
 const todos = []
 
 const render = () => {
-  app.innerHTML = `
-    <div class="mx-auto p-4 max-w-md">
-      <h1 class="text-2xl font-bold mb-4">Lista To Do</h1>
-      <input id="todoInput" class="w-full p-2 border rounded mb-2" type="text" placeholder="Adicionar todo...">
-      <button onclick="addTodo()" class="bg-gray-700 text-white p-2 rounded">Add Todo</button>
-      <ul class="mt-4">
-        ${todos.map(todo => `<li>${todo}<button onclick="removeTodo('${todo}')">Remove</button></li>`).join('')}
-      </ul>
-    </div>
+  todoList.innerHTML = `
+   ${todos.map(todo => `<li class="flex justify-between">${todo}<button onclick="removeTodo('${todo}')">Delete</button></li>`).join('')}
   `
 }
 

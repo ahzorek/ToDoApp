@@ -1,4 +1,4 @@
 import './style.css'
-import setupTrelleApp from './todo.js'
+import startTrelleApp from './trelle.js'
 
-setupTrelleApp(document.querySelector('#app'))
+startTrelleApp(document.querySelector('#app'))
