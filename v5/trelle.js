@@ -1,46 +1,19 @@
 export default function TrelloLikeApp(container) {
   let appState = [
     {
-      "taskName": "Ideação e Planejamento 🚀",
-      "todos": [
-        { "text": "Desenvolver landing pages", "completed": false },
-        { "text": "Conduzir pesquisa de mercado", "completed": false },
-        { "text": "Definir metas e objetivos", "completed": false }
-      ]
+      "taskName": "Starting",
+      "todos": []
     },
-    {
-      "taskName": "Design e Prototipagem 🎨",
-      "todos": [
-        { "text": "Criar design das landing pages", "completed": false },
-        { "text": "Obter feedback de design", "completed": false },
-        { "text": "Refinar protótipos", "completed": false }
-      ]
-    },
-    {
-      "taskName": "Implementação 🚧",
-      "todos": [
-        { "text": "Codificar as landing pages", "completed": false },
-        { "text": "Realizar testes de funcionalidade", "completed": false },
-        { "text": "Integrar conteúdo e recursos", "completed": false }
-      ]
-    },
-    {
-      "taskName": "Testes e Ajustes 🧪",
-      "todos": [
-        { "text": "Conduzir testes de usabilidade", "completed": false },
-        { "text": "Corrigir bugs identificados", "completed": false },
-        { "text": "Otimizar desempenho", "completed": false }
-      ]
-    },
-    {
-      "taskName": "Lançamento e Avaliação 🚀",
-      "todos": [
-        { "text": "Publicar as landing pages", "completed": false },
-        { "text": "Avaliar o desempenho inicial", "completed": false },
-        { "text": "Coletar feedback dos usuários", "completed": false }
-      ]
-    }
   ]
+
+  const fetchInitialState = () => {
+    const storedState = JSON.parse(localStorage.getItem('appState'))
+    if (storedState) {
+      appState = storedState
+    }
+  }
+
+  fetchInitialState()
 
   const render = () => {
     container.innerHTML = `
@@ -101,6 +74,9 @@ export default function TrelloLikeApp(container) {
     }))
 
     console.log(appState)
+
+    localStorage.setItem('appState', JSON.stringify(appState))
+
   }
 
 

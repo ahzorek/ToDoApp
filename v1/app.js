@@ -3,7 +3,7 @@ const todos = []
 
 const render = () => {
   todoList.innerHTML = `
-    ${todos.map(todo => `<li class="flex justify-between">${todo}<button onclick="removeTodo('${todo}')">Delete</button></li>`).join('')}
+    ${todos.map(todo => `<li class="flex justify-between">${todo}<button onclick="removeTodo('${todo}')">X</button></li>`).join('')}
   `
 }
 
@@ -24,3 +24,4 @@ const removeTodo = (todo) => {
     render()
   }
 }
+

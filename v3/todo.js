@@ -4,7 +4,7 @@ export const setupTodoApp = (container) => {
   const render = () => {
     container.innerHTML = `
       <div>
-        <h1>Coisas To Do</h1>
+        <h1>To Do App</h1>
         <div class="addTodoWrapper">
           <input id="todoInput" type="text" placeholder="Adicionar todo...">
           <button id="addTodo">+</button>

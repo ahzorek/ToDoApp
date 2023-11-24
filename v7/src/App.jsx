@@ -11,26 +11,6 @@ const App = () => {
         { text: "Conduzir testes de usabilidade", completed: false },
         { text: "Publicar as páginas", completed: false }
       ]
-    },
-    {
-      taskName: "Elaborar Relatório de Vendas",
-      todos: [
-        { text: "Coletar dados de vendas", completed: false },
-        { text: "Analisar tendências", completed: false },
-        { text: "Preparar o relatório", completed: false },
-        { text: "Revisar e corrigir", completed: false },
-        { text: "Apresentar aos stakeholders", completed: false }
-      ]
-    },
-    {
-      taskName: "Implementar Novo Sistema de Pagamentos",
-      todos: [
-        { text: "Avaliar soluções existentes", completed: false },
-        { text: "Selecionar tecnologias", completed: false },
-        { text: "Desenvolver e integrar", completed: false },
-        { text: "Testar segurança e desempenho", completed: false },
-        { text: "Implantar e monitorar", completed: false }
-      ]
     }
   ]);
 
